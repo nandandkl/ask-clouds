@@ -2,7 +2,7 @@
 Ask Clouds is a sleek and interactive weather web app built with Django and enhanced by machine learning. It fetches real-time weather data and displays temperature, humidity, and forecast trends with modern visual elements. Users can search for any city and get ML-driven weather insights with a modern, animated UI, powered by OpenWeatherMap.
 
 ## 🌐 Live Demo:
-🔗 Explore the Ask-Clouds web app by visiting https://ask-clouds.onrender.com/ in your browser.
+🔗 Explore the Ask-Clouds web app by visiting [Ask Clouds](https://ask-clouds.onrender.com/) in your browser.
 
 ## ✨ Features
 1. **Location Search:** Users can enter any city to retrieve weather data.
