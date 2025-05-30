@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+
+    {% load static %}
+
+
+    <meta charset="UTF-8">
+    <title>Ask Clouds</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="icon" href="{% static 'img/logo.png' %}" type="image/png">
+    
+</head>
+<body>
+    <main class="main-container {{description}}" id="mainContainer">
+        <div class="glass-overlay"></div>
+        
+
+        <!-- Side Panel -->
+        <section class="side-panel">
+            <!-- Logo Section -->
+            <div class="logo-section">
+                <div class="logo-container">
+                    <div class="logo"><img class="logo-img" src="{% static 'img/logo.png' %}" alt=""></div>
+                </div>
+                <h1 class="brand-name">Ask Clouds</h1>
+                <p class="brand-tagline">Clouds Talk. We Listen.</p>
+            </div>
+
+            <!-- Search Container -->
+            <form method="POST">
+                    {% csrf_token %}
+                <div class="search-container">
+                    <label class="search-label">Location Search</label>
+                    <div class="search-wrapper">
+                        <div class="search-icon"><i class="bi bi-search"></i></div>
+
+                        <input type="text"
+                        name="city"
+                        placeholder="Ask Clouds"
+                        value="{{ location }}"
+                        autocomplete="off"
+                        class="search-input"
+                        id="searchInput">
+
+                        <button class="search-button">→</button>
+                    </div>
+                </div>
+            </form>
+            {% if error %}
+            <div class="error">
+            <i class="bi bi-exclamation-triangle"></i>
+            '{{error}}' not found.
+            </div>
+            {% endif %}
+
+            <!-- Current Weather Display -->
+            <div class="current-weather">
+                <h2 class="current-temp" id="currentTemp">{{ current_temp }}°C</h2>
+                <h3 class="feels-like" id="feelsLike">Feels like {{feels_like}}°C</h3>
+                <div class="weather-stats">
+                    <div class="stat-card">
+                        <div class="card-icon"><i class="bi bi-droplet"></i></div>
+                        <p class="stat-value" id="humidity">{{humidity}}%</p>
+                        <p class="stat-label">Humidity</p>
+                    </div>
+                    <div class="stat-card">
+                        <div class="card-icon"><i class="bi bi-cloud"></i></div>
+                        <p class="stat-value" id="clouds">{{clouds}}%</p>
+                        <p class="stat-label">Clouds</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Main Content -->
+        <section class="main-content">
+            <!-- Weather Header -->
+            <div class="weather-header">
+                <h4 class="conditions-label">Current Conditions</h4>
+                <h1 class="weather-title" id="weatherTitle">{{description}}</h1>
+                <div class="location-info">
+                    <span class="location-icon"><i class="bi bi-geo-alt"></i></span>
+                    <p class="location-text">
+                        <span class="location-city" id="cityName">{{city}}</span>, 
+                        <span id="countryName">{{country}}</span>
+                        <span class="location-date" id="currentDate">{{time}}</span>
+                    </p>
+                </div>
+
+                <!-- Weather Data Cards -->
+                <div class="weather-cards">
+                    <div class="weather-card">
+                        <div class="card-icon"><i class="bi bi-thermometer-half"></i></div>
+                        <div class="card-label">Range</div>
+                        <div class="card-value" id="tempRange">{{temp_min}}° / {{temp_max}}°</div>
+                    </div>
+                    <div class="weather-card">
+                        <div class="card-icon"><i class="bi bi-wind"></i></div>
+                        <div class="card-label">Wind</div>
+                        <div class="card-value" id="windSpeed">{{wind}} km/h</div>
+                    </div>
+                    <div class="weather-card">
+                        <div class="card-icon"><i class="bi bi-speedometer2"></i></div>
+                        <div class="card-label">Pressure</div>
+                        <div class="card-value" id="pressure">{{pressure}} hPa</div>
+                    </div>
+                    <div class="weather-card">
+                        <div class="card-icon"><i class="bi bi-eye"></i></div>
+                        <div class="card-label">Visibility</div>
+                        <div class="card-value" id="visibility">{{visibility}} m</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Forecast Section -->
+            <div class="forecast-section">
+                <div class="forecast-header">
+                    <h3 class="forecast-title">5-Hour Forecast</h3>
+                    <div class="forecast-legend">
+                        <div class="legend-item">
+                            <div class="legend-dot temp"></div>
+                            <span class="legend-text">Temperature</span>
+                        </div>
+                        <div class="legend-item">
+                            <div class="legend-dot humidity"></div>
+                            <span class="legend-text">Humidity</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Chart Container -->
+                <div class="chart-container">
+                    <svg class="chart-svg" viewBox="0 0 600 120">
+                        <defs>
+                            <linearGradient id="tempGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                                <stop offset="0%" stop-color="#3B82F6" />
+                                <stop offset="100%" stop-color="#1E40AF" />
+                            </linearGradient>
+                        </defs>
+                        
+                        <line x1="40" y1="20" x2="560" y2="20" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+                        <line x1="40" y1="40" x2="560" y2="40" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+                        <line x1="40" y1="60" x2="560" y2="60" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+                        <line x1="40" y1="80" x2="560" y2="80" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+                        <line x1="40" y1="100" x2="560" y2="100" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+                        
+
+                        <path id="tempPath" class="temp-path" d="M 40,60 L 170,50 L 300,55 L 430,65 L 560,75"/>
+                        
+
+                        <g id="dataPoints"></g>
+                    </svg>
+                </div>
+
+                <!-- Humidity Display -->
+                <div class="humidity-section">
+                    <h4 class="humidity-title">Humidity Levels</h4>
+                    <div class="humidity-grid" id="humidityGrid">
+                    </div>
+                </div>
+
+                <!-- Statistics -->
+                <div class="statistics">
+                    <div class="stat-box">
+                        <div class="stat-header">
+                            <div class="stat-dot temp"></div>
+                            <span class="stat-name">Temperature Range</span>
+                        </div>
+                        <div class="stat-result" id="tempRangeStat">{{lowest_temp}}° - {{highest_temp}}°</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-header">
+                            <div class="stat-dot humidity"></div>
+                            <span class="stat-name">Average Humidity</span>
+                        </div>
+                        <div class="stat-result" id="avgHumidityStat">{{humavg}}%</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Hidden data elements -->
+<div style="display: none;">
+    <!-- Time data -->
+    <span class="time-data">{{ time1|default:'14:00' }}</span>
+    <span class="time-data">{{ time2|default:'15:00' }}</span>
+    <span class="time-data">{{ time3|default:'16:00' }}</span>
+    <span class="time-data">{{ time4|default:'17:00' }}</span>
+    <span class="time-data">{{ time5|default:'18:00' }}</span>
+
+    <!-- Temperature data -->
+    <span class="temp-data">{{ temp1|default:'22' }}</span>
+    <span class="temp-data">{{ temp2|default:'24' }}</span>
+    <span class="temp-data">{{ temp3|default:'23' }}</span>
+    <span class="temp-data">{{ temp4|default:'21' }}</span>
+    <span class="temp-data">{{ temp5|default:'19' }}</span>
+
+    <!-- Humidity data -->
+    <span class="humidity-data">{{ hum1|default:'65' }}</span>
+    <span class="humidity-data">{{ hum2|default:'62' }}</span>
+    <span class="humidity-data">{{ hum3|default:'68' }}</span>
+    <span class="humidity-data">{{ hum4|default:'70' }}</span>
+    <span class="humidity-data">{{ hum5|default:'72' }}</span>
+</div>
+
+    
+
+    <!-- <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> -->
+    <script type="module" src="{% static 'js/main.js' %}"></script>
+</body>
+</html>
