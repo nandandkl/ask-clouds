@@ -13,11 +13,11 @@ Ask Clouds is a sleek and interactive weather web app built with Django and enha
 6. **Responsive Design:** Works seamlessly across desktops, tablets, and mobile devices.
 
 ## 🛠️ Technologies Used
-- Frontend: HTML, CSS (Glassmorphism & Animations), Bootstrap Icons, JavaScript (modular)
-- Backend: Python, Django
-- Weather API: OpenWeatherMap API
-- Machine Learning: Numpy, Pandas, Scikit-Learn
-- Others: SVG, CSS Animations, Django Templating
+- **Frontend:** HTML, CSS (Glassmorphism & Animations), Bootstrap Icons, JavaScript (modular)
+- **Backend:** Python, Django
+- **Weather API:** OpenWeatherMap API
+- **Machine Learning:** Numpy, Pandas, Scikit-Learn
+- **Others:** SVG, CSS Animations, Django Templating
 
 ## 📦 Installation
 Follow these steps to set up the project locally:
