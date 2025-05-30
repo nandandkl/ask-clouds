@@ -5,12 +5,12 @@ Ask Clouds is a sleek and interactive weather web app built with Django. It fetc
 🔗 Explore the Ask-Clouds web app by visiting https://ask-clouds.onrender.com/ in your browser.
 
 ## ✨ Features
-1. Location Search: Users can enter any city to retrieve weather data.
-2. Real-time Weather Info: Current temperature, humidity, wind speed, and more.
-3. Dynamic Backgrounds: Weather-based UI updates for a more immersive experience.
-4. 5-Hour Forecast Visualization: Smooth SVG temperature and humidity charts.
-5. Error Handling: Friendly UI feedback for invalid or not-found cities.
-6. Responsive Design: Works seamlessly across desktops, tablets, and mobile devices.
+1. **Location Search:** Users can enter any city to retrieve weather data.
+2. **Real-time Weather Info:** Current temperature, humidity, wind speed, and more.
+3. **Dynamic Backgrounds:** Weather-based UI updates for a more immersive experience.
+4. **5-Hour Forecast Visualization:** Smooth SVG temperature and humidity charts.
+5. **Error Handling:** Friendly UI feedback for invalid or not-found cities.
+6. **Responsive Design:** Works seamlessly across desktops, tablets, and mobile devices.
 
 ## 🛠️ Technologies Used
 - Frontend: HTML, CSS (Glassmorphism & Animations), Bootstrap Icons, JavaScript (modular)
@@ -65,6 +65,6 @@ Contributions are welcome! To contribute:
 - Submit a pull request.
 
 ## 💬 Feedback
-• Found a bug? Have a feature request?
-• Open an issue
-• Or reach out via GitHub
+- Found a bug? Have a feature request?
+- Open an issue
+- Or reach out via GitHub
