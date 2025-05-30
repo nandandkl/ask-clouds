@@ -23,34 +23,35 @@ Others: SVG, CSS Animations, Django Templating
 Follow these steps to set up the project locally:
 
 1. Clone the Repository
-<pre> ```bash
+<pre>
  git clone https://github.com/yourusername/ask-clouds.git 
  cd ask-clouds
-``` </pre>
+</pre>
 
 2. Create & Activate Virtual Environment
 
-<pre> ```bash
-python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
-``` </pre>
+<pre>
+ python -m venv venv
+ source venv/bin/activate  # On Windows: venv\Scripts\activate
+</pre>
 
 3. Install Dependencies
 
-<pre> ```bash
-pip install -r requirements.txt
-``` </pre>
+<pre>
+ pip install -r requirements.txt
+</pre>
 
 4. Run Migrations
 
-<pre> ```bash
-python manage.py migrate
- ``` </pre>
+<pre>
+ python manage.py migrate
+</pre>
 
 5. Start the Server
-<pre> ```bash 
+<pre>
  python manage.py runserver
-``` </pre>
+</pre>
+
 Visit in Browser
 Open `http://localhost:8000` to see the app.
  
