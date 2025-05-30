@@ -169,7 +169,7 @@ def weather_view(request):
 
 
 
-        csv_path = '/Users/nandandhakal/Documents/askClouds/Web-App/askclouds.csv'
+        csv_path = 'askclouds.csv'
 
 
 
