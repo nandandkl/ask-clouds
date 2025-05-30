@@ -2,7 +2,7 @@
 Ask Clouds is a sleek and interactive weather web app built with Django. It fetches real-time weather data and displays temperature, humidity, and forecast trends with modern visual elements. Users can search for any city and get beautifully presented climate insights, powered by OpenWeatherMap.
 
 ## 🌐 Live Demo:
-🔗 You can experience the ask-clouds web app by opening link (https://ask-clouds.onrender.com/) in your browser.
+🔗 Explore the Ask-Clouds web app by visiting https://ask-clouds.onrender.com/ in your browser.
 
 ## ✨ Features
 1. Location Search: Users can enter any city to retrieve weather data.
@@ -23,43 +23,37 @@ Others: SVG, CSS Animations, Django Templating
 Follow these steps to set up the project locally:
 
 1. Clone the Repository
-
-bash
-Copy
-Edit
-git clone https://github.com/yourusername/ask-clouds.git
-cd ask-clouds
+<pre> ```bash
+ git clone https://github.com/yourusername/ask-clouds.git 
+ cd ask-clouds
+``` </pre>
 
 2. Create & Activate Virtual Environment
 
-bash
-Copy
-Edit
+<pre> ```bash
 python -m venv venv
 source venv/bin/activate  # On Windows: venv\Scripts\activate
+``` </pre>
 
 3. Install Dependencies
 
-bash
-Copy
-Edit
+<pre> ```bash
 pip install -r requirements.txt
+``` </pre>
 
 4. Run Migrations
 
-bash
-Copy
-Edit
+<pre> ```bash
 python manage.py migrate
+ ``` </pre>
 
 5. Start the Server
-
-bash
-Copy
-Edit
-python manage.py runserver
+<pre> ```bash 
+ python manage.py runserver
+``` </pre>
 Visit in Browser
-Open http://localhost:8000 to see the app.
+Open `http://localhost:8000` to see the app.
+ 
 
 ## 🤝 Contributing
 Contributions are welcome! To contribute:
