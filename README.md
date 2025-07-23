@@ -24,7 +24,7 @@ Follow these steps to set up the project locally:
 
 1. Clone the Repository
 <pre>
- git clone https://github.com/yourusername/ask-clouds.git 
+ git clone https://github.com/nandandkl/ask-clouds.git 
  cd ask-clouds
 </pre>
 
