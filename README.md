@@ -23,34 +23,34 @@ Ask Clouds is a sleek and interactive weather web app built with Django and enha
 Follow these steps to set up the project locally:
 
 1. Clone the Repository
-<pre>
+```
  git clone https://github.com/nandandkl/ask-clouds.git 
  cd ask-clouds
-</pre>
+```
 
 2. Create & Activate Virtual Environment
 
-<pre>
+```
  python -m venv venv
  source venv/bin/activate  # On Windows: venv\Scripts\activate
-</pre>
+```
 
 3. Install Dependencies
 
-<pre>
+```
  pip install -r requirements.txt
-</pre>
+```
 
 4. Run Migrations
 
-<pre>
+```
  python manage.py migrate
-</pre>
+```
 
 5. Start the Server
-<pre>
+```
  python manage.py runserver
-</pre>
+```
 
 Visit in Browser
 Open `http://localhost:8000` to see the app.
